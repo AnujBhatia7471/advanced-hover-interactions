@@ -1,19 +1,51 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #05060b;
-  overflow: hidden;
-}
-
-canvas {
+/* FULL PAGE CENTERING */
+.paragraph-demo {
   position: fixed;
   inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  pointer-events: none;
 }
 
+/* MAIN PARAGRAPH */
+.demo1 {
+  max-width: 900px;
+  text-align: center;
+  font-size: 2.2rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #ffffff;
 
-.content {
-  position: relative;
-  z-index: 10;
-  color: white;
-  padding: 100px;
+  /* subtle glow */
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.35),
+    0 0 20px rgba(255,255,255,0.15);
+}
+
+/* RAINBOW ANIMATED SPAN */
+.highlight {
+  font-weight: 600;
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff9900,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #ff00ff,
+    #ff0000
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 4s linear infinite;
+}
+
+/* RAINBOW LOOP */
+@keyframes rainbow {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
